@@ -9,7 +9,7 @@ import 'tachyons';
 
 ReactDOM.render(
   <React.StrictMode>
-    <Hello />
+    <Hello greeting={'April'} />
   </React.StrictMode>,
   document.getElementById('root')
 );
