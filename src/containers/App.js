@@ -12,7 +12,7 @@ import {setSearchField} from '../actions';
 //what states to listen to
 const mapStateToProps = state =>{
 	return {
-		searchField = state.searchRobots.searchFields
+		searchField : state.searchField
 	}
 }
 
@@ -29,19 +29,15 @@ class App extends Component{
 	constructor(){
 		super()
 		this.state = {
-			robots: [],
-	     
+			robots: []
 		}
 	}
 
 	componentDidMount(){
-		
-		fetch('https://jsonplaceholder.typicode.com/users').then(response=>{
+		fetch('https://jsonplaceholder.typicode.com/users')
+		.then(response=>{
 			return response.json()
-
-		}).then(users =>{
-			this.setState({robots:users})
-		});
+		}).then(users =>{this.setState({robots:users})});
 		
 	}
 	render(){
